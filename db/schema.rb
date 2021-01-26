@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_191830) do
+ActiveRecord::Schema.define(version: 2021_01_26_203251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "calendars", force: :cascade do |t|
+    t.integer "user_id"
     t.string "avail"
     t.date "start_date"
     t.date "end_date"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_191830) do
   end
 
   create_table "experiences", force: :cascade do |t|
+    t.integer "user_id"
     t.string "event_name"
     t.string "position"
     t.text "desc"
@@ -75,16 +77,9 @@ ActiveRecord::Schema.define(version: 2021_01_26_191830) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_calendars", force: :cascade do |t|
+  create_table "user_categories", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "calendar_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_experiences", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "experience_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
