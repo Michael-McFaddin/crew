@@ -1,0 +1,2 @@
+class ImgVideo < ApplicationRecord
+end
