@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user, except: [:create]
+  # before_action :authenticate_user, except: [:index, :create]
 
   def index
     @users = User.all
@@ -13,6 +13,7 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
+      active: true,
     )
     if @user.save
       render "show.json.jb"
@@ -22,14 +23,14 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    @user = current_user
+    @user = User.find(params[:id])
+    # @user = current_user
     render "show.json.jb"
   end
 
   def update
-    @user = current_user
-    # @user = User.find(params[:id])
+    # @user = current_user
+    @user = User.find(params[:id])
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
@@ -56,8 +57,8 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    # @user = User.find(params[:id])
+    # @user = current_user
+    @user = User.find(params[:id])
     @user.destroy
     render json: { message: "User successfully deleted!" }
   end
