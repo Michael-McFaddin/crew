@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation],
+      # password_confirmation: params[:password_confirmation],
       # coverage_id: params[:coverage_id],
       active: true,
     )
@@ -30,8 +30,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
     # @user = User.find(params[:id])
+    @user = current_user
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email

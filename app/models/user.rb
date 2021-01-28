@@ -3,7 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :first_name, :last_name, presence: true
-  validates :password, presence: true
 
   # belongs_to :coverage
 end
