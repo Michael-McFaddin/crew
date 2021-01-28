@@ -1,0 +1,6 @@
+{
+  id: img_video.id,
+  user_id: img_video.user_id,
+  url: img_video.url,
+  media_type: img_video.media_type,
+}

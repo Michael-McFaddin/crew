@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       # password_confirmation: params[:password_confirmation],
-      # coverage_id: params[:coverage_id],
+      coverage_id: 1,
       active: true,
     )
     if @user.save

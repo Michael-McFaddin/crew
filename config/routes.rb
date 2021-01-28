@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get "/coverages" => "coverages#index"
 
     post "/img_videos" => "img_videos#create"
+    get "/img_videos/:id" => "img_videos#show"
+    delete "/img_videos/:id" => "img_videos#destroy"
 
     get "/categories" => "categories#index"
     post "/categories" => "categories#create"

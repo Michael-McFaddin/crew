@@ -1,0 +1,4 @@
+{
+  id: coverage.id,
+  cover_type: coverage.cover_type,
+}

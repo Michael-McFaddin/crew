@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Coverage.create!([
+#   { cover_type: "Local" },
+#   { cover_type: "United States" },
+#   { cover_type: "US East Coast" },
+#   { cover_type: "US Mid Eastern" },
+#   { cover_type: "US West Coast" },
+#   { cover_type: "US Mid West" },
+#   { cover_type: "International" },
+# ])
+
+# User.create!([
+#   {
+#     first_name: "Michael",
+#     last_name: "McFaddin",
+
+#   },
+# ])
+
+# ImgVideo.create!([
+
+# ])

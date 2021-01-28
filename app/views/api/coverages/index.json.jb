@@ -1,0 +1,3 @@
+@coverages.map do |coverage|
+  render partial: "coverage.json.jb", locals: { coverage: coverage }
+end
