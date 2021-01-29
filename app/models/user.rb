@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :img_videos, dependent: :destroy
   has_many :user_categories, dependent: :destroy
+  has_many :user_skills, dependent: :destroy
   # has_many :categories, through: :user_categories, source: :categories
   belongs_to :coverage
 end

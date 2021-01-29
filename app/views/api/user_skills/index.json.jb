@@ -1,0 +1,3 @@
+@user_skills.map do |user_skill|
+  render partial: "user_skill.json.jb", locals: { user_skill: user_skill }
+end

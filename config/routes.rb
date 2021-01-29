@@ -29,9 +29,9 @@ Rails.application.routes.draw do
     post "/skills" => "skills#create"
     get "/skills/:id" => "skills#show"
 
-    get "/user_skills" => "user_skills#index"
+    # get "/user_skills" => "user_skills#index"
     post "/user_skills" => "user_skills#create"
-    post "/user_skills" => "user_skills#destroy"
+    delete "/user_skills/:id" => "user_skills#destroy"
 
     get "/calendars" => "calendars#index"
     post "/calendars" => "calendars#create"
