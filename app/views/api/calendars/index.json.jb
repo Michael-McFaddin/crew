@@ -1,0 +1,3 @@
+@calendars.map do |calendar|
+  render partial: "calendar.json.jb", locals: { calendar: calendar }
+end

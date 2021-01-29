@@ -2,17 +2,15 @@ require "rails_helper"
 
 RSpec.describe "ImgVideos", type: :request do
 
-  # before action creation of coverage, user, img_video
+  # before action creation of user and img_video
 
   before do
-    coverage = Coverage.create(cover_type: "International")
     user = User.create(
       first_name: "Eddy",
       last_name: "Munster",
       email: "eddymunster@email.com",
       password: "password",
       title: "Television Character",
-      coverage_id: coverage.id,
       active: true,
     )
     img = ImgVideo.create(

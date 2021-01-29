@@ -33,13 +33,13 @@ Rails.application.routes.draw do
     post "/user_skills" => "user_skills#create"
     delete "/user_skills/:id" => "user_skills#destroy"
 
-    get "/calendars" => "calendars#index"
+    # get "/calendars" => "calendars#index"
     post "/calendars" => "calendars#create"
     get "/calendars/:id" => "calendars#show"
     patch "/calendars/:id" => "calendars#update"
     delete "/calendars/:id" => "calendars#destroy"
 
-    get "/experiences" => "experiences#index"
+    # get "/experiences" => "experiences#index"
     post "/experiences" => "experiences#create"
     get "/experiences/:id" => "experiences#show"
     patch "/experiences/:id" => "experiences#update"

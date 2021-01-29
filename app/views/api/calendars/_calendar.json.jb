@@ -1,0 +1,7 @@
+{
+  id: calendar.id,
+  user_id: calendar.user_id,
+  availability: calendar.avail,
+  start_date: calendar.start_date,
+  end_date: calendar.end_date
+}

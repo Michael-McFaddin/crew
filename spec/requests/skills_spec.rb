@@ -2,17 +2,15 @@ require "rails_helper"
 
 RSpec.describe "Skills", type: :request do
 
-  # before action creation of coverage and user
+  # before action creation of user and skills
 
   before do
-    coverage = Coverage.create(cover_type: "International")
     user = User.create(
       first_name: "Eddy",
       last_name: "Munster",
       email: "eddymunster@email.com",
       password: "password",
       title: "Television Character",
-      coverage_id: coverage.id,
       active: true,
     )
     skills = Skill.create([
@@ -35,8 +33,6 @@ RSpec.describe "Skills", type: :request do
       skills = JSON.parse(response.body)
       expect(response).to have_http_status(200)
       expect(skills[0]["name"]).to eq("Forklift Certification")
-      # expect(users[0]["title"]).to eq("Television Character")
-      # expect(users[0]["active"]).to eq(true)
     end
   end
 
@@ -64,8 +60,6 @@ RSpec.describe "Skills", type: :request do
       skill = JSON.parse(response.body)
       expect(response).to have_http_status(200)
       expect(skill["name"]).to eq("Gibson Guitar technician")
-      # expect(users[0]["title"]).to eq("Television Character")
-      # expect(users[0]["active"]).to eq(true)
     end
   end
 end

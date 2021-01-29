@@ -48,3 +48,30 @@
 #   { name: "Gobo light products" },
 #   { name: "Gibson Guitar technician" },
 # ])
+
+# Calendar.create!([
+#   {
+#     user_id: 8,
+#     avail: "available",
+#     start_date: "2021-02-01",
+#     end_date: "2021-03-01",
+#   },
+#   {
+#     user_id: 8,
+#     avail: "available",
+#     start_date: "2021-04-01",
+#     end_date: "2021-05-01",
+#   },
+#   {
+#     user_id: 9,
+#     avail: "available",
+#     start_date: "2021-01-31",
+#     end_date: "2021-02-15",
+#   },
+#   {
+#     user_id: 9,
+#     avail: "available",
+#     start_date: "2021-06-01",
+#     end_date: "2021-06-15",
+#   },
+# ])

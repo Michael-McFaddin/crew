@@ -1,6 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Coverages", type: :request do
+
+  # before action creation of coverage and user
+
   before do
     coverage = Coverage.create(cover_type: "International")
     user = User.create(
@@ -22,8 +25,6 @@ RSpec.describe "Coverages", type: :request do
       coverages = JSON.parse(response.body)
       expect(response).to have_http_status(200)
       expect(coverages[0]["cover_type"]).to eq("International")
-      # expect(users[0]["title"]).to eq("Television Character")
-      # expect(users[0]["active"]).to eq(true)
     end
   end
 end
