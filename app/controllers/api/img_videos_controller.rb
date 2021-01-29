@@ -3,8 +3,8 @@ class Api::ImgVideosController < ApplicationController
 
   def create
     @img_video = ImgVideo.new(
-      # user_id: current_user.id,
-      user_id: params[:user_id],
+      user_id: current_user.id,
+      # user_id: params[:user_id],
       url: params[:url],
       media_type: params[:media_type],
     )
@@ -22,7 +22,11 @@ class Api::ImgVideosController < ApplicationController
 
   def destroy
     @img_video = ImgVideo.find(params[:id])
-    @img_video.destroy
-    render json: { message: "Image or Video deleted", id: @img_video.id }
+    if @img_video.user_id == current_user.id
+      @img_video.destroy
+      render json: { message: "Image or Video deleted", id: @img_video.id }
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 end

@@ -5,5 +5,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   has_many :img_videos
+  has_many :user_categories
+  # has_many :categories, through: :user_categories, source: :categories
   belongs_to :coverage
 end

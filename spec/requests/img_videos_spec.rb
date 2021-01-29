@@ -1,6 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "ImgVideos", type: :request do
+
+  # before action creation of coverage, user, img_video
+
   before do
     coverage = Coverage.create(cover_type: "International")
     user = User.create(
@@ -51,6 +54,20 @@ RSpec.describe "ImgVideos", type: :request do
       expect(imgvideo["user_id"]).to eq(User.first.id)
       expect(imgvideo["url"]).to eq("www.someimageorvideo.com")
       expect(imgvideo["media_type"]).to eq("image")
+    end
+  end
+
+  # img_videos destroy test
+
+  describe "DELETE /img_videos/:id" do
+    it "should delete an img_video and return a message and id" do
+      jwt = JWT.encode({ user_id: User.first.id }, Rails.application.credentials.fetch(:secret_key_base), "HS256")
+      delete "/api/img_videos/#{ImgVideo.first.id}",
+        headers: { "Authorization" => "Bearer #{jwt}" }
+      imgvideo = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(imgvideo["message"]).to eq("Image or Video deleted")
+      # expect(imgvideo["id"]).to eq(ImgVideo.first.id)
     end
   end
 end

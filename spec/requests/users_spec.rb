@@ -1,6 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Users", type: :request do
+
+  # before action creation of coverage and user
+
   before do
     coverage = Coverage.create(cover_type: "International")
     user = User.create(

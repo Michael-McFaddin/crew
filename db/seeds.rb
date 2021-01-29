@@ -24,6 +24,18 @@
 #   },
 # ])
 
+# Category.create!([
+#   { name: "Audio" },
+#   { name: "Lighting" },
+#   { name: "Production" },
+#   { name: "Operations" },
+#   { name: "Tour Management" },
+#   { name: "Photography/Videography" },
+#   { name: "Stage Tech" },
+#   { name: "Artist Relations" },
+#   { name: "Hospitality" },
+# ])
+
 # ImgVideo.create!([
 
 # ])
