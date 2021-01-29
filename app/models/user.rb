@@ -4,8 +4,8 @@ class User < ApplicationRecord
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :first_name, :last_name, presence: true
 
-  has_many :img_videos
-  has_many :user_categories
+  has_many :img_videos, dependent: :destroy
+  has_many :user_categories, dependent: :destroy
   # has_many :categories, through: :user_categories, source: :categories
   belongs_to :coverage
 end

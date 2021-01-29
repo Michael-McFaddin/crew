@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     get "/categories" => "categories#index"
     get "/categories/:id" => "categories#show"
 
-    get "/user_categories" => "user_categories#index"
+    # get "/user_categories" => "user_categories#index"
     post "/user_categories" => "user_categories#create"
-    post "/user_categories" => "user_categories#destroy"
+    delete "/user_categories/:id" => "user_categories#destroy"
 
     get "/skills" => "skills#index"
     post "/skills" => "skills#create"
