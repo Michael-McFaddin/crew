@@ -1,0 +1,4 @@
+{
+  id: skill.id,
+  name: skill.name
+}

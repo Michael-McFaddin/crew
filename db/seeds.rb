@@ -39,3 +39,12 @@
 # ImgVideo.create!([
 
 # ])
+
+# Skill.create!([
+#   { name: "Forklift Certification" },
+#   { name: "Rough Terrain Forklift Certification" },
+#   { name: "Meyer 120" },
+#   { name: "CDL Class A" },
+#   { name: "Gobo light products" },
+#   { name: "Gibson Guitar technician" },
+# ])

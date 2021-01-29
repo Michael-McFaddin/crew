@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
     get "/skills" => "skills#index"
     post "/skills" => "skills#create"
+    get "/skills/:id" => "skills#show"
 
     get "/user_skills" => "user_skills#index"
     post "/user_skills" => "user_skills#create"
